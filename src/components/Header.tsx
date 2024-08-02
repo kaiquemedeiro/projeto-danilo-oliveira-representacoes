@@ -1,7 +1,9 @@
+import logoHeader from '../assets/logo-header.png';
+
 export default function Header() {
   return (
     <header>
-      
+      <img src={ logoHeader } alt="Logo Danilo Oliveira" />
       <nav>
         <ul>
           <li>
