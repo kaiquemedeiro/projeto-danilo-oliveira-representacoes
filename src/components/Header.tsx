@@ -1,6 +1,9 @@
 import logo from '../images/LogoHeader.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
+
+  const navigate = useNavigate();
 
   const scrollToFooter = () => {
     const navFooter = document.getElementById('footer');
@@ -9,14 +12,14 @@ export default function Header() {
 
   return (
     <header>
-      <img src={ logo } alt="Logo Danilo Oliveira" />
+      <img src={ logo } alt="Logo Danilo Oliveira" onClick={ () => navigate('/') } />
       <nav>
         <ul>
           <li>
-            <a href="/">Clientes</a>
+            <a onClick={ () => navigate('/clientes')}>Clientes</a>
           </li>
           <li>
-            <a href="/about">Produtos</a>
+            <a onClick={ () => navigate('/produtos') }>Produtos</a>
           </li>
           <li>
             <a onClick={ scrollToFooter }>Contato</a>
