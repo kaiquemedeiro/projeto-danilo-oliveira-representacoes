@@ -30,13 +30,13 @@ h1 {
 
 .List {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   margin-top: 30px;
   padding: 0;
-  padding-left: 940px;
   width: 100%;
+  margin-left: 50px;
 }
 
 .List img {
@@ -49,12 +49,46 @@ h1 {
   display: flex;
   align-items: center;
   margin: 10px;
+  flex: 1 1 200px; /* Adjust the basis value as needed */
 }
 
 .Li p {
   margin: 0;
   padding: 0;
-  font-size: 30px;
+  font-size: 20px;
 }
 
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .Li {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Li p {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .List img {
+    width: 40px;
+    height: 40px;
+  }
+}
 
+@media (max-width: 480px) {
+  .Li {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Li p {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .List img {
+    width: 30px;
+    height: 30px;
+  }
+}

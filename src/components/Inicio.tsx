@@ -2,7 +2,7 @@ import styles from './Inicio.module.css';
 
 export default function Inicio() {
   return (
-    <div className={styles.Body}>
+    <div className={styles.Body} id='inicio'>
       <div className={styles.titleContainer}>
         <h1>Quem somos?</h1>
       </div>

@@ -6,20 +6,28 @@ export default function Header() {
 
   const navigate = useNavigate();
 
+  const scrollWithOffset = (id: string, offset: number) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    const topPosition = element.getBoundingClientRect().top + window.pageYOffset + offset;
+    window.scrollTo({ top: topPosition, behavior: 'smooth' });
+  };
+
+  const scroolToTop = () => {
+    scrollWithOffset('inicio', -100); // Ajuste este valor conforme necessário
+  };
+
   const scroolToClients = () => {
-    const navClients = document.getElementById('clients');
-    navClients?.scrollIntoView({ behavior: 'smooth' });
-  }
+    scrollWithOffset('clients', -100); // Ajuste este valor conforme necessário
+  };
 
   const scrollToFooter = () => {
-    const navFooter = document.getElementById('footer');
-    navFooter?.scrollIntoView({ behavior: 'smooth' });
-  }
+    scrollWithOffset('footer', -100); // Ajuste este valor conforme necessário
+  };
 
   const scrollToProducts = () => {
-    const navProducts = document.getElementById('products');
-    navProducts?.scrollIntoView({ behavior: 'smooth' });
-  }
+    scrollWithOffset('products', -100); // Ajuste este valor conforme necessário
+  };
 
   return (
     <header className={ styles.Body }>
@@ -27,7 +35,7 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <a onClick={ () => navigate('/')}>Início</a>
+            <a onClick={ scroolToTop }>Início</a>
           </li>
           <li>
             <a onClick={ scroolToClients }>Clientes</a>
