@@ -1,0 +1,82 @@
+.Body {
+  background-color: rgba(4, 22, 46, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box; /* Para incluir padding e bordas na largura total */
+}
+
+.Body img {
+  width: 180px;
+  cursor: pointer;
+  border: none;
+  margin-left: 30px;
+}
+
+.Body nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+
+.Body nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row; /* Alt
+  era a exibição para flexbox */
+  align-items: center;
+  padding: 0; /* Remove o padding padrão */
+  margin: 0; /* Remove a margem padrão */
+
+}
+
+.Body nav ul li {
+  margin: 10px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.Body nav ul li a {
+  color: rgba(244,143,61,255);
+  text-decoration: none;
+  padding: 0px 0px 10px 0;
+  position: relative;
+
+}
+
+.Body nav ul li a::after {
+  content: " ";
+  height: 1px;
+  width: 0%;
+  background-color: rgba(244,143,61,255);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.Body nav ul li a:hover::after {
+  width: 100%;
+  transition: all 0.3s ease 0s;
+}
+
+/* Caso eu coloque um botão, tenho estilizado efeitos de hover */
+/* button {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 25px;
+  background-color: rgba(244,143,61,255);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(244,143,61,0.6);
+} */
