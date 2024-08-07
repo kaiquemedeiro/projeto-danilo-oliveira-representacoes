@@ -1,5 +1,5 @@
 .Body {
-  position: -webkit-sticky; /* Para compatibilidade com navegadores mais antigos */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: rgba(4, 22, 46, 255);
@@ -7,8 +7,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  box-sizing: border-box; /* Para incluir padding e bordas na largura total */
-  z-index: 1000; /* Para garantir que o header fique acima de outros elementos */
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 .Body img {
@@ -25,16 +25,18 @@
   margin-right: 30px;
 }
 
+.Body nav .hamburgerMenu {
+  display: none;
+  cursor: pointer;
+}
 
 .Body nav ul {
   list-style: none;
   display: flex;
-  flex-direction: row; /* Alt
-  era a exibição para flexbox */
+  flex-direction: row;
   align-items: center;
-  padding: 0; /* Remove o padding padrão */
-  margin: 0; /* Remove a margem padrão */
-
+  padding: 0;
+  margin: 0;
 }
 
 .Body nav ul li {
@@ -44,43 +46,54 @@
 }
 
 .Body nav ul li a {
-  color: rgba(244,143,61,255);
+  color: rgba(244, 143, 61, 255);
   text-decoration: none;
   padding: 0px 0px 10px 0;
   position: relative;
-
 }
 
 .Body nav ul li a::after {
   content: " ";
   height: 1px;
   width: 0%;
-  background-color: rgba(244,143,61,255);
+  background-color: rgba(244, 143, 61, 255);
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-
-.Body nav ul li a:hover::after {
+.Body nav ul li a:hover::after,
+.Body nav ul li.active a::after {
   width: 100%;
   transition: all 0.3s ease 0s;
 }
 
-/* Caso eu coloque um botão, tenho estilizado efeitos de hover */
-/* button {
-  width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 9px 25px;
-  background-color: rgba(244,143,61,255);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
+@media (max-width: 768px) {
+  .Body nav .hamburgerMenu {
+    display: block;
+  }
 
-button:hover {
-  background-color: rgba(244,143,61,0.6);
-} */
+  .Body nav .hamburgerMenu .MenuIcon {
+    width: 30px;
+  }
+
+  .Body nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(4, 22, 46, 255);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
+  }
+
+  .Body nav ul.showMenu {
+    display: flex;
+  }
+
+  .Body nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}

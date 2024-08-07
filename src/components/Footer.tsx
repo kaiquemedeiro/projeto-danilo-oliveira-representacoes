@@ -22,10 +22,9 @@ export default function Footer() {
         </li>
         <li className={ styles.Li }>
           <img src={ emailLogo } alt="email logo" />
-          <p>danilo@dc-representacoes.com</p>
+          <p className= { styles.pEmail }>danilo@dc-representacoes.com</p>
         </li>
       </ul>
-      <p>© 2024</p>
     </footer>
   );
 }
