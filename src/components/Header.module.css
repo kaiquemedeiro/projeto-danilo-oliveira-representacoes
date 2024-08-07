@@ -96,4 +96,18 @@
     margin: 10px 0;
     text-align: center;
   }
+
+  .menu {
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+  }
+  
+  .showMenu {
+    max-height: 300px; /* Ajuste este valor conforme necessário */
+  }
+  
+  .headerWithMenuOpen {
+    margin-bottom: 180px; /* Ajuste este valor conforme necessário */
+  }
 }

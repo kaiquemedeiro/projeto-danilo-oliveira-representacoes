@@ -9,21 +9,24 @@ export default function Header() {
   const [activeItem, setActiveItem] = useState('inicio');
   const navigate = useNavigate();
 
-  const scrollWithOffset = (id: string, offset: number) => {
+  const scrollWithOffset = (id: string) => {
     const element = document.getElementById(id);
     if (!element) return;
+    const isMobile = window.innerWidth <= 768;
+    const offset = isMobile ? -160 : -100; // Ajuste os valores conforme necessário
     const topPosition = element.getBoundingClientRect().top + window.pageYOffset + offset;
     window.scrollTo({ top: topPosition, behavior: 'smooth' });
   };
 
   const scrollToSection = (id: string) => {
-    scrollWithOffset(id, -100); // Ajuste este valor conforme necessário
+    scrollWithOffset(id);
     setIsMenuOpen(false); // Fechar o menu ao clicar em um item
     setActiveItem(id); // Definir o item ativo
   };
+  
 
   return (
-    <header className={styles.Body}>
+    <header className={`${styles.Body} ${isMenuOpen ? styles.headerWithMenuOpen : ''}`}>
       <img src={logo} alt="Logo Danilo Oliveira" onClick={() => navigate('/')} />
       <nav>
         <div className={styles.hamburgerMenu} onClick={() => setIsMenuOpen(!isMenuOpen)}>
