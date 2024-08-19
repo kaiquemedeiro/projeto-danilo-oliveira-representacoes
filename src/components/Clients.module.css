@@ -26,3 +26,25 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
+.ContainerLogos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ContainerLogos img {
+  background-color: #c7dbdd;
+  border: #f0f0f0 1px solid;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+}
+
+.ContainerLogos img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}

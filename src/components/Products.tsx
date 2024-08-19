@@ -1,4 +1,6 @@
 import styles from './Products.module.css';
+import allenMontada from '../images/produtos/ALLEN MONTADA.png';
+import allen from '../images/produtos/ALLEN.png';
 
 export default function Products() {
   return (
@@ -6,11 +8,10 @@ export default function Products() {
       <div className={ styles.titleContainer }>
         <h1>Produtos</h1>
       </div>
-      <p>Em breve</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nobis error, quos eum modi at? Tenetur cumque temporibus, porro perferendis ad quam corrupti inventore nobis laboriosam repudiandae totam tempora! Nostrum?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nobis error, quos eum modi at? Tenetur cumque temporibus, porro perferendis ad quam corrupti inventore nobis laboriosam repudiandae totam tempora! Nostrum?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nobis error, quos eum modi at? Tenetur cumque temporibus, porro perferendis ad quam corrupti inventore nobis laboriosam repudiandae totam tempora! Nostrum?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nobis error, quos eum modi at? Tenetur cumque temporibus, porro perferendis ad quam corrupti inventore nobis laboriosam repudiandae totam tempora! Nostrum?</p>
+      <div className={ styles.ProductsImgs}>
+        <img src={ allenMontada } alt="Allen Montada" />
+        <img src={ allen } alt="Allen" />
+      </div>
     </div>
   )
 }
